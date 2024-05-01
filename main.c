@@ -40,7 +40,13 @@ double diagonal_retangulo(double baseret, double alturaret) {
 }
 
 // TRIÂNGULO
-
+double perimetro_triangulo(double lado1, double lado2, double lado3) {
+    return lado1 + lado2 + lado3;
+}
+double area_triangulo(double lado1, double lado2, double lado3) {
+    double semi_perimetro = perimetro_triangulo(lado1, lado2, lado3) / 2;
+    return sqrt(semi_perimetro * (semi_perimetro - lado1) * (semi_perimetro - lado2) * (semi_perimetro - lado3));
+}
 
 // Trapézio
 double area_trapezio(double basemaior, double basemenor, double alturatrap){
@@ -114,7 +120,30 @@ int main() {
     printf("Perímetro do quadrado: %2.lf\n", perimetro_retangulo(baseret, alturaret));
     printf("Diagonal do quadrado: %2.lf\n", diagonal_retangulo(baseret, alturaret));
   }
-  if (opcao == 5) { }
+  if (opcao == 5) {
+      double lado1, lado2, lado3;
+        printf("\nInsira o comprimento do lado 1 (base) do triângulo: ");
+        scanf("%lf", &lado1);
+        printf("Insira o comprimento do lado 2 do triângulo: ");
+        scanf("%lf", &lado2);
+        printf("Insira o comprimento do lado 3 do triângulo: ");
+        scanf("%lf", &lado3);
+    if (lado1 + lado2 > lado3 && lado1 + lado3 > lado2 && lado2 + lado3 > lado1) {
+        if (lado1 == lado2 && lado2 == lado3) {
+            printf("\nSeu triângulo é equilátero.\n");
+        } else if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3) {
+            printf("\nSeu triângulo é isósceles.\n");
+        } else {
+            printf("\nSeu triângulo é escaleno.\n");
+        }
+
+        printf("Perímetro do triângulo: %.2lf\n", perimetro_triangulo(lado1, lado2, lado3));
+        printf("Área do triângulo: %.2lf\n", area_triangulo(lado1, lado2, lado3));
+      }
+    else {
+      printf("\nOs valores inseridos não formam um triângulo válido.\n");
+    }
+  }
   if (opcao == 6) {
     double basemaior, basemenor, alturatrap, lado1trap, lado2trap;
     printf("\nInsira a base maior do trapézio: ");
@@ -132,12 +161,12 @@ int main() {
     printf("Mediana do trapézio: %.2lf\n", mediana_trapezio(basemaior, basemenor));
     printf("Perímetro do trapézio: %.2lf\n", perimetro_trapezio(basemaior, basemenor, lado1trap, lado2trap));
   }
-if (opcao == 7) {
-  double diagonalmaior, diagonalmenor;
-  printf("\nInsira a diagonal maior do losango: ");
-  scanf("%lf", &diagonalmaior);
-  printf("Insira a diagonal menor do losango: ");
-  scanf("%lf", &diagonalmenor);
+  if (opcao == 7) {
+    double diagonalmaior, diagonalmenor;
+    printf("\nInsira a diagonal maior do losango: ");
+    scanf("%lf", &diagonalmaior);
+    printf("Insira a diagonal menor do losango: ");
+    scanf("%lf", &diagonalmenor);
 
     double lado = lados_losango(diagonalmaior, diagonalmenor);
     double perimetro = 4 * lado;
