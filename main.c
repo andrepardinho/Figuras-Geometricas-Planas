@@ -56,6 +56,14 @@ double perimetro_trapezio(double basemaior, double basemenor, double lado1trap, 
   return basemaior + basemenor + lado1trap + lado2trap;
 }
 
+//LOSANGO
+double area_losango(double diagonalmaior, double diagonalmenor) {
+  return (diagonalmaior * diagonalmenor) / 2;
+}
+double lados_losango(double diagonalmaior, double diagonalmenor) {
+  return sqrt(pow((diagonalmaior/2), 2) + pow((diagonalmenor/2), 2));
+}
+
 
 int main() {
   int opcao;
@@ -124,6 +132,20 @@ int main() {
     printf("Mediana do trapézio: %.2lf\n", mediana_trapezio(basemaior, basemenor));
     printf("Perímetro do trapézio: %.2lf\n", perimetro_trapezio(basemaior, basemenor, lado1trap, lado2trap));
   }
+if (opcao == 7) {
+  double diagonalmaior, diagonalmenor;
+  printf("\nInsira a diagonal maior do losango: ");
+  scanf("%lf", &diagonalmaior);
+  printf("Insira a diagonal menor do losango: ");
+  scanf("%lf", &diagonalmenor);
+
+    double lado = lados_losango(diagonalmaior, diagonalmenor);
+    double perimetro = 4 * lado;
+
+  printf("\nÁrea do losango: %.2lf um²\n", area_losango(diagonalmaior, diagonalmenor));
+  printf("Lado do losango: %.2lf\n", lado);
+  printf("Perímetro do losango: %.2lf\n", perimetro);
+}
 
   return 0;
 }
