@@ -75,7 +75,7 @@ int main() {
   int opcao;
   printf("Escolha uma figura geométrica:\n");
   printf("\n1. Segmento de reta\n");
-  printf("2. Circulo\n");
+  printf("2. Círculo\n");
   printf("3. Quadrado\n");
   printf("4. Retângulo\n");
   printf("5. Triângulo\n");
@@ -92,41 +92,41 @@ int main() {
       scanf("%lf", &A);
       printf("Digite o ponto B: ");
       scanf("%lf", &B);
-      printf("\nComprimento do segmento de reta: %.2lf\n", comprimento_reta(A, B));
+      printf("\nComprimento do segmento de reta: %.2lf u.m\n", comprimento_reta(A, B));
   }
-  if  (opcao == 2) {
+  if (opcao == 2) {
       double raio;
-      printf("\nInsira o raio do círculo: ");
+      printf("\nDigite o valor do raio do círculo: ");
       scanf("%lf", &raio);
-      printf("\nÁrea do círculo: %.2lf\n", area_circulo(raio));
-      printf("Perímetro do círculo: %.2lf\n", perimetro_circulo(raio));
-      printf("Diâmetro do círculo: %.2lf\n", diametro_circulo(raio));
+      printf("\nÁrea: %.2lf u.m²\n", area_circulo(raio));
+      printf("Perímetro: %.2lf u.m\n", perimetro_circulo(raio));
+      printf("Diâmetro: %.2lf u.m\n", diametro_circulo(raio));
   }
   if (opcao == 3) {
      double lado;
-     printf("\nInsira o lado do quadrado: ");
+     printf("\nDigite o valor do lado do quadrado: ");
      scanf("%lf", &lado);
-     printf("\nÁrea do quadrado: %2.lf\n", area_quadrado(lado));
-     printf("Perimetro do quadrado: %2.lf\n", perimetro_quadrado(lado));
-     printf("Diagonal quadrado: %.2lf\n", diametro_circulo(lado));
+     printf("\nÁrea: %2.lf u.m²\n", area_quadrado(lado));
+     printf("Perimetro: %2.lf u.m\n", perimetro_quadrado(lado));
+     printf("Diagonal: %.2lf u.m\n", diametro_circulo(lado));
   }
   if (opcao == 4) {
     double baseret, alturaret;
-    printf("\nInsira a base do retângulo: ");
+    printf("\nDigite o valor da base do retângulo: ");
     scanf("%lf", &baseret);
-    printf("Insira a altura do retângulo: ");
+    printf("Valor da altura do retângulo: ");
     scanf("%lf", &alturaret);
-    printf("\nÁrea do quadrado: %2.lf\n", area_retangulo(baseret, alturaret));
-    printf("Perímetro do quadrado: %2.lf\n", perimetro_retangulo(baseret, alturaret));
-    printf("Diagonal do quadrado: %2.lf\n", diagonal_retangulo(baseret, alturaret));
+    printf("\nÁrea: %2.lf u.m²\n", area_retangulo(baseret, alturaret));
+    printf("Perímetro: %2.lf u.m\n", perimetro_retangulo(baseret, alturaret));
+    printf("Diagonal: %2.lf u.m\n", diagonal_retangulo(baseret, alturaret));
   }
   if (opcao == 5) {
       double lado1, lado2, lado3;
-        printf("\nInsira o comprimento do lado 1 (base) do triângulo: ");
+        printf("\nDigite o comprimento do lado 1 (base) do triângulo: ");
         scanf("%lf", &lado1);
-        printf("Insira o comprimento do lado 2 do triângulo: ");
+        printf("Comprimento do lado 2: ");
         scanf("%lf", &lado2);
-        printf("Insira o comprimento do lado 3 do triângulo: ");
+        printf("Comprimento do lado 3: ");
         scanf("%lf", &lado3);
     if (lado1 + lado2 > lado3 && lado1 + lado3 > lado2 && lado2 + lado3 > lado1) {
         if (lado1 == lado2 && lado2 == lado3) {
@@ -137,8 +137,8 @@ int main() {
             printf("\nSeu triângulo é escaleno.\n");
         }
 
-        printf("Perímetro do triângulo: %.2lf\n", perimetro_triangulo(lado1, lado2, lado3));
-        printf("Área do triângulo: %.2lf\n", area_triangulo(lado1, lado2, lado3));
+        printf("Área: %.2lf u.m²\n", area_triangulo(lado1, lado2, lado3));
+        printf("Perímetro: %.2lf u.m\n", perimetro_triangulo(lado1, lado2, lado3));
       }
     else {
       printf("\nOs valores inseridos não formam um triângulo válido.\n");
@@ -146,34 +146,34 @@ int main() {
   }
   if (opcao == 6) {
     double basemaior, basemenor, alturatrap, lado1trap, lado2trap;
-    printf("\nInsira a base maior do trapézio: ");
+    printf("\nDigite o valor da base maior do trapézio: ");
     scanf("%lf", &basemaior);
-    printf("Insira a base menor do trapézio: ");
+    printf("Valor da base menor: ");
     scanf("%lf", &basemenor);
-    printf("Insira a altura do trapézio: ");
+    printf("Valor da altura: ");
     scanf("%lf", &alturatrap);
-    printf("Insira o 1º lado do trapézio: ");
+    printf("Valor do 1º lado do trapézio: ");
     scanf("%lf", &lado1trap);
-    printf("Insira 2º lado do trapézio: ");
+    printf("Valor do 2º lado do trapézio: ");
     scanf("%lf", &lado2trap);
-    printf("\nÁrea do trapézio: %.2lf um²\n", area_trapezio(basemaior, basemenor, alturatrap));
-    printf("Base média do trapézio: %.2lf\n", basemedia_trapezio(basemaior, basemenor));
-    printf("Mediana do trapézio: %.2lf\n", mediana_trapezio(basemaior, basemenor));
-    printf("Perímetro do trapézio: %.2lf\n", perimetro_trapezio(basemaior, basemenor, lado1trap, lado2trap));
+    printf("\nÁrea: %.2lf u.m²\n", area_trapezio(basemaior, basemenor, alturatrap));
+    printf("Base média: %.2lf u.m\n", basemedia_trapezio(basemaior, basemenor));
+    printf("Mediana: %.2lf u.m\n", mediana_trapezio(basemaior, basemenor));
+    printf("Perímetro: %.2lf u.m\n", perimetro_trapezio(basemaior, basemenor, lado1trap, lado2trap));
   }
   if (opcao == 7) {
     double diagonalmaior, diagonalmenor;
-    printf("\nInsira a diagonal maior do losango: ");
+    printf("\nDigite o valor da diagonal maior do losango: ");
     scanf("%lf", &diagonalmaior);
-    printf("Insira a diagonal menor do losango: ");
+    printf("Valor da diagonal menor: ");
     scanf("%lf", &diagonalmenor);
 
     double lado = lados_losango(diagonalmaior, diagonalmenor);
     double perimetro = 4 * lado;
 
-  printf("\nÁrea do losango: %.2lf um²\n", area_losango(diagonalmaior, diagonalmenor));
-  printf("Lado do losango: %.2lf\n", lado);
-  printf("Perímetro do losango: %.2lf\n", perimetro);
+  printf("\nÁrea: %.2lf u.m²\n", area_losango(diagonalmaior, diagonalmenor));
+  printf("Lado: %.2lf u.m\n", lado);
+  printf("Perímetro: %.2lf u.m\n", perimetro);
 }
 
   return 0;
